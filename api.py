@@ -187,6 +187,7 @@ def api_create(audio_type):
             request.json['duration'],
             request.json['host'],
             request.json['participants']
+            #paticipants = [data['participant1'],data['participant2'],data['participant3']]
         )
         db.session.add(podcast)
         db.session.commit()       
