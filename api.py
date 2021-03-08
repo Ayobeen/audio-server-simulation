@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify, abort, make_response
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import BigInteger
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
+#DATABASE SETUP
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///audios.sqlite3'
 db = SQLAlchemy(app)
 
+#ENTRYING MODEL
 class songs(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name_of_song = db.Column(db.String(100), nullable=False)
@@ -85,6 +86,7 @@ class audiobooks(db.Model):
         return data
 
 
+#ENTRYING API ROUTES
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
@@ -101,7 +103,6 @@ def api_get(audio_type, audio_id):
         abort(404)
     if audio_type == 'song':
         if audio_id != -1:
-            #song = [song for song in songs.query.all() if song['id'] == audio_id]
             song = songs.query.get_or_404(audio_id).to_dict()
             if len(song) == 0:
                 abort(404)
@@ -168,6 +169,8 @@ def api_create(audio_type):
         abort(400)
     if audio_type == "song":
         if "name_of_song" not in request.json and "duration" not in request.json:
+            abort(400)
+        if request.json['duration'] < 0:
             abort(400)
         song = songs(
             request.json['name_of_song'],
