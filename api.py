@@ -138,6 +138,8 @@ def api_udpate(audio_type, audio_id):
 
     if audio_type == "song":
         song = songs.query.get_or_404(audio_id)
+        if request.json['duration'] < 0:
+            abort(400)
         song.name_of_song = request.json['name_of_song']
         song.duration = request.json['duration']
         db.session.commit()
@@ -145,6 +147,8 @@ def api_udpate(audio_type, audio_id):
 
     elif(audio_type == "podcast"):
         podcast = podcasts.query.get_or_404(audio_id)
+        if request.json['duration'] < 0:
+            abort(400)
         podcast.name_of_podcast = request.json['name_of_podcast']
         podcast.duration = request.json['duration']
         podcast.host = request.json['host']
@@ -154,6 +158,8 @@ def api_udpate(audio_type, audio_id):
 
     else:
         audiobook = audiobooks.query.get_or_404(audio_id)
+        if request.json['duration'] < 0:
+            abort(400)
         audiobook.title_of_audiobook = request.json['title_of_audiobook']
         audiobook.author = request.json['author']
         audiobook.narrator = request.json['narrator']
