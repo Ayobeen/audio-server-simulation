@@ -1,5 +1,6 @@
 # python-flask-coding-exercise
-A Flask Web API that simulates the behavior of an audio file server
+## Implenting CRUD API with Flask Python Framework
+### Simulating the behavior of an audio file server
 ## Features
 consummers can send
 - get request
