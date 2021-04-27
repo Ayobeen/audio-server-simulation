@@ -14,12 +14,10 @@ consummers can send
     https://filedaudioserver.herokuapp.com/</P>
 
     <h3>API ENDPOINTS FORMAT</h3>
-<p> https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype
+<p>for all audio:  https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype
+    
+for single audio: https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype/id
 	<br>
-    for all audio<br>
-https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype/id
-	<br>
-    for single audio<br>
 	where id = 1,2,3,.....</p>
 
 <h3>GET REQUEST</h3>
