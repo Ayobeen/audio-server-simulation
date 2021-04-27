@@ -60,7 +60,7 @@ and the body of the request for each adiotype are:<br>
     }
     </br>
 
-<b>for audiobook audiotype us this format</b><br>
+<b>for audiobook audiotype use this format</b><br>
 	{
         "title_of_audiobook": "I'm the title",<br>
         "duration": 36,<br>
@@ -68,12 +68,11 @@ and the body of the request for each adiotype are:<br>
         "author": "Brian, Mumeen"<br>
            
     }
-    </br>
 </p>
 
 <h3>FOR UPDATE AND DELETE REQUEST</h3>
 <p>
 use the same request body format as post request except adding the id of the audio to be deleted to the end of the url
 </br>
-url url = https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype/id
+url  = https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype/id
 </p>
