@@ -13,8 +13,9 @@ consummers can send
 <P><b>WEB URL </b>
     https://filedaudioserver.herokuapp.com/</P>
 
-    <h3>API ENDPOINTS FORMAT</h3>
-<p>for all audio:  https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype
+### API ENDPOINTS FORMAT
+<p>for all audio:  https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype </br>
+Where audiotype = song, podcast, and audiobook
     
 for single audio: https://filedaudioserver.herokuapp.com/api/v1/resources/audiotype/id
 	<br>
